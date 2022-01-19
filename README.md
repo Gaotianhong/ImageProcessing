@@ -24,3 +24,8 @@
 高通滤波和低通滤波
 ### 边缘检测
 选择laplacian算子、sobel算子和canny算子进行边缘检测
+### 目标检测
+yolov5、人脸检测和图像分割
+
+## 算法模块耦合关系
+![图片 1](https://user-images.githubusercontent.com/79080003/150116887-276a3bae-8e1e-41a8-a7a1-8b4474322594.jpg)
