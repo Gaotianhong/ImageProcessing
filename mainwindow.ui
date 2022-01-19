@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>986</width>
+    <height>693</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Image Processing</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="word1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Zapfino</family>
+      <pointsize>13</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string> Image Processing System</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="word2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>50</y>
+      <width>121</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Zapfino</family>
+      <pointsize>13</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="text">
+     <string>Show Image 👉</string>
+    </property>
+   </widget>
+   <widget class="ImageView" name="imageView">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>780</width>
+      <height>650</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGraphicsView {background:transparent}</string>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustIgnored</enum>
+    </property>
+    <property name="dragMode">
+     <enum>QGraphicsView::NoDrag</enum>
+    </property>
+    <property name="viewportUpdateMode">
+     <enum>QGraphicsView::MinimalViewportUpdate</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>130</y>
+      <width>140</width>
+      <height>96</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="viewOriginal">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>View Original</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="drawHistogram">
+       <property name="text">
+        <string>Draw Histogram</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>240</y>
+      <width>182</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="brightness">
+       <property name="text">
+        <string>Brightness Controller</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Cbrightness">
+       <property name="minimum">
+        <number>-255</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="contrast">
+       <property name="text">
+        <string>Contrast Controller</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Ccontrast">
+       <property name="minimum">
+        <number>-127</number>
+       </property>
+       <property name="maximum">
+        <number>127</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>181</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="kernel_size">
+       <property name="inputMethodHints">
+        <set>Qt::ImhNone</set>
+       </property>
+       <property name="text">
+        <string>Choose Your Kernel Size 👇</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="slider">
+       <property name="minimum">
+        <number>3</number>
+       </property>
+       <property name="singleStep">
+        <number>2</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>word2</zorder>
+   <zorder>word1</zorder>
+   <zorder>imageView</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>horizontalSlider</zorder>
+   <zorder>label</zorder>
+   <zorder>red</zorder>
+   <zorder>red_slider</zorder>
+   <zorder>green</zorder>
+   <zorder>green_slider</zorder>
+   <zorder>layoutWidget_2</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>986</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Kaiti SC</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="tabletTracking">
+    <bool>true</bool>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/image/images/weather.jpg)</string>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="geometry">
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="title">
+     <string>几何变换</string>
+    </property>
+    <addaction name="zoomIn"/>
+    <addaction name="zoomOut"/>
+    <addaction name="rotateL"/>
+    <addaction name="rotateR"/>
+    <addaction name="flipH"/>
+    <addaction name="flipR"/>
+   </widget>
+   <widget class="QMenu" name="histogram">
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>直方图处理</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <addaction name="equalization"/>
+    <addaction name="regulation"/>
+   </widget>
+   <widget class="QMenu" name="smooth">
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="title">
+     <string>平滑处理</string>
+    </property>
+    <addaction name="average"/>
+    <addaction name="median"/>
+    <addaction name="gaussian"/>
+    <addaction name="bilateral"/>
+   </widget>
+   <widget class="QMenu" name="sharpen">
+    <property name="title">
+     <string>锐化处理</string>
+    </property>
+    <addaction name="sobel"/>
+    <addaction name="robert"/>
+    <addaction name="prewitt"/>
+    <addaction name="laplacian"/>
+    <addaction name="color"/>
+   </widget>
+   <widget class="QMenu" name="noise">
+    <property name="title">
+     <string>加性噪声</string>
+    </property>
+    <addaction name="gaussianN"/>
+    <addaction name="impulseN"/>
+    <addaction name="randomN"/>
+   </widget>
+   <widget class="QMenu" name="frequency">
+    <property name="title">
+     <string>频域滤波</string>
+    </property>
+    <addaction name="highpass"/>
+    <addaction name="lowpass"/>
+   </widget>
+   <widget class="QMenu" name="file">
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>false</bool>
+    </property>
+    <addaction name="open"/>
+    <addaction name="save"/>
+    <addaction name="close"/>
+    <addaction name="hide"/>
+   </widget>
+   <widget class="QMenu" name="edgeDetection">
+    <property name="title">
+     <string>边缘检测</string>
+    </property>
+    <addaction name="laplacianED"/>
+    <addaction name="sobelED"/>
+    <addaction name="cannyED"/>
+   </widget>
+   <widget class="QMenu" name="gray">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="font">
+     <font>
+      <family>SimSong</family>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="title">
+     <string>灰度变换</string>
+    </property>
+    <addaction name="graying"/>
+    <addaction name="reverse"/>
+    <addaction name="binarization"/>
+   </widget>
+   <widget class="QMenu" name="targetDetection">
+    <property name="title">
+     <string>目标检测</string>
+    </property>
+    <addaction name="yolov5"/>
+    <addaction name="face"/>
+    <addaction name="segmentation"/>
+   </widget>
+   <addaction name="file"/>
+   <addaction name="geometry"/>
+   <addaction name="gray"/>
+   <addaction name="histogram"/>
+   <addaction name="noise"/>
+   <addaction name="smooth"/>
+   <addaction name="sharpen"/>
+   <addaction name="frequency"/>
+   <addaction name="edgeDetection"/>
+   <addaction name="targetDetection"/>
+  </widget>
+  <action name="open">
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="save">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="close">
+   <property name="text">
+    <string>关闭</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="zoomIn">
+   <property name="text">
+    <string>放大</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+I</string>
+   </property>
+  </action>
+  <action name="zoomOut">
+   <property name="text">
+    <string>缩小</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+O</string>
+   </property>
+  </action>
+  <action name="rotateL">
+   <property name="text">
+    <string>向左旋转</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="rotateR">
+   <property name="text">
+    <string>向右旋转</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="equalization">
+   <property name="text">
+    <string>直方图均衡化</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="regulation">
+   <property name="text">
+    <string>直方图规定化</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="graying">
+   <property name="text">
+    <string>图像灰度化</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+   <property name="priority">
+    <enum>QAction::LowPriority</enum>
+   </property>
+  </action>
+  <action name="reverse">
+   <property name="text">
+    <string>图像反转</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+   <property name="priority">
+    <enum>QAction::LowPriority</enum>
+   </property>
+  </action>
+  <action name="binarization">
+   <property name="text">
+    <string>图像二值化</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+   <property name="priority">
+    <enum>QAction::NormalPriority</enum>
+   </property>
+  </action>
+  <action name="flipH">
+   <property name="text">
+    <string>水平翻转</string>
+   </property>
+  </action>
+  <action name="flipR">
+   <property name="text">
+    <string>垂直翻转</string>
+   </property>
+  </action>
+  <action name="average">
+   <property name="text">
+    <string>均值滤波</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="median">
+   <property name="text">
+    <string>中值滤波</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="gaussian">
+   <property name="text">
+    <string>高斯滤波</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="gaussianN">
+   <property name="text">
+    <string>高斯噪声</string>
+   </property>
+  </action>
+  <action name="impulseN">
+   <property name="text">
+    <string>椒盐噪声</string>
+   </property>
+  </action>
+  <action name="randomN">
+   <property name="text">
+    <string>随机噪声</string>
+   </property>
+  </action>
+  <action name="sobel">
+   <property name="text">
+    <string>sobel算子</string>
+   </property>
+  </action>
+  <action name="robert">
+   <property name="text">
+    <string>robert算子</string>
+   </property>
+  </action>
+  <action name="prewitt">
+   <property name="text">
+    <string>prewitt算子</string>
+   </property>
+  </action>
+  <action name="laplacian">
+   <property name="text">
+    <string>laplacian算子</string>
+   </property>
+  </action>
+  <action name="bilateral">
+   <property name="text">
+    <string>双边滤波</string>
+   </property>
+  </action>
+  <action name="highpass">
+   <property name="text">
+    <string>高通滤波</string>
+   </property>
+  </action>
+  <action name="lowpass">
+   <property name="text">
+    <string>低通滤波</string>
+   </property>
+  </action>
+  <action name="laplacianED">
+   <property name="text">
+    <string>laplacian算子</string>
+   </property>
+  </action>
+  <action name="sobelED">
+   <property name="text">
+    <string>sobel算子</string>
+   </property>
+  </action>
+  <action name="cannyED">
+   <property name="text">
+    <string>canny算子</string>
+   </property>
+  </action>
+  <action name="yolov5">
+   <property name="text">
+    <string>yolov5</string>
+   </property>
+  </action>
+  <action name="face">
+   <property name="text">
+    <string>人脸检测</string>
+   </property>
+  </action>
+  <action name="segmentation">
+   <property name="text">
+    <string>图像分割</string>
+   </property>
+  </action>
+  <action name="hide">
+   <property name="text">
+    <string>隐藏</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+H</string>
+   </property>
+  </action>
+  <action name="color">
+   <property name="text">
+    <string>color</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ImageView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">imageview</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
