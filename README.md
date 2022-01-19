@@ -28,4 +28,4 @@
 yolov5、人脸检测和图像分割
 
 ## 算法模块耦合关系
-![图片 1](https://user-images.githubusercontent.com/79080003/150116887-276a3bae-8e1e-41a8-a7a1-8b4474322594.jpg)
+<img width="680" alt="image" src="https://user-images.githubusercontent.com/79080003/150118943-651f93f7-0d0e-4f8c-b10f-1cfb959f2c95.png">
