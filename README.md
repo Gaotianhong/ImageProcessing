@@ -1,5 +1,5 @@
 # ImageProcessing
-整合常用图像处理方法和技术，设计精美UI界面，开发出一套基于OpenCV的图像处理系统
+整合常用图像处理方法和技术，设计精美 UI 界面，开发出一套基于 OpenCV 的图像处理系统
 ## 主界面
 <img src="test/主界面.png" width = "549" height = "420" alt="" align=center />
 
@@ -19,11 +19,11 @@
 ### 平滑处理
 均值滤波、中值滤波、高斯滤波以及双边滤波
 ### 锐化处理
-选择不同的算子对图像进行锐化，包括sobel算子、robert算子、prewitt算子、laplacain算子
+选择不同的算子对图像进行锐化，包括 sobel 算子、robert 算子、prewitt 算子、laplacain 算子
 ### 频域滤波
 高通滤波和低通滤波
 ### 边缘检测
-选择laplacian算子、sobel算子和canny算子进行边缘检测
+选择 laplacian 算子、sobel 算子和 canny 算子进行边缘检测
 ### 目标检测
 yolov5、人脸检测和图像分割
 
