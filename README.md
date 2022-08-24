@@ -27,5 +27,11 @@
 ### 目标检测
 yolov5、人脸检测和图像分割
 
+## 运行
+```sh
+pip install -r requirements.txt
+python 
+```
+
 ## 算法模块耦合关系
 <img width="680" alt="image" src="https://user-images.githubusercontent.com/79080003/150118943-651f93f7-0d0e-4f8c-b10f-1cfb959f2c95.png">
