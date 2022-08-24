@@ -28,8 +28,12 @@
 yolov5、人脸检测和图像分割
 
 ## 代码运行
+### 安装依赖
 ```sh
 pip install -r requirements.txt
+```
+### 运行
+```sh
 python ImageProcessing.py
 ```
 
